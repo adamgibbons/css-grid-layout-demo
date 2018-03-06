@@ -1,0 +1,104 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 18px;
+}
+
+@media (min-width: 1000px) {
+  .container {
+    display: grid;
+    grid-template-columns: 120px 70% auto 1em;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "logo primary-links account-links spacer"
+      "spacer2 secondary-links secondary-links secondary-links";
+  }
+  .logo {
+    grid-area: logo;
+    background-color: #000759;
+    color: white;
+  }
+  .primary-links {
+    grid-area: primary-links;
+    background-color: #000759;
+    color: white;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+  }
+  .secondary-links {
+    grid-area: secondary-links;
+    background: #ddd;
+    display: flex;
+    flex-flow: row nowrap;
+    padding-left: 1em;
+  }
+  .account-links {
+    grid-area: account-links;
+    background-color: #4b71e1;
+    color: white;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    font-size: .85em;
+  }
+  .hamburger-menu {
+    grid-area: spacer;
+    background: #000759;
+  }
+  .spacer2 {
+    grid-area: spacer2;
+    background: #4b71e1;
+  }
+  .logo, .primary-links, .account-links, .secondary-links div {
+    padding: 1em .33em;
+  }
+  .divider {
+    font-size: .4em;
+    position: relative;
+    top: 2.2em;
+    margin: 0 1em;
+  }
+  .hamburger-menu div, .avatar, .icons {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    color: white;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+      "logo hamburger-menu"
+      "avatar icons"
+  }
+  .logo {
+    grid-area: logo;
+    background-color: #000759;
+  }
+  .hamburger-menu {
+    grid-area: hamburger-menu;
+    background: #000759;
+    text-align: right;
+  }
+  .avatar {
+    grid-area: avatar;
+    background: #4b71e1;
+  }
+  .primary-links, .account-links, .secondary-links {
+    display: none;
+  }
+  .icons {
+    grid-area: icons;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    background: #4b71e1;
+  }
+  .avatar, .logo, .hamburger-menu, .icons {
+    padding: 1em;
+  }
+}
